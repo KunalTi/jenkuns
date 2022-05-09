@@ -6,7 +6,6 @@ pipeline {
                  stage('Build') {
                  steps {
                      echo ' Starting to build the App.'
-                     git credentialsId: 'git_jenkins', url: 'git@github.com:KunalTi/jenkuns.git'
                      sh "ls"
                  sh 'sleep 10'
                  }
