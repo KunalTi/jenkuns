@@ -1,6 +1,6 @@
 pipeline {
          agent {
-             node ("ec2-worker")
+             label ("ec2-worker")
          }
          stages {
                  stage('Build') {
