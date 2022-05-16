@@ -65,10 +65,10 @@ sudo apt-get install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 EOF
-
   tags = {
-    Name = "maven"
+    Name = "jenkins"
   }
+}
 resource "aws_instance" "maven2" {
   ami           = data.aws_ami.jenkins.id
   instance_type = "t2.micro"
