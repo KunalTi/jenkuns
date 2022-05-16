@@ -1,34 +1,8 @@
 provider "aws" {
   region = "ap-south-1"
-  access_key = "AKIA3HKIJ6A2Q622TEPA"
-  secret_key = "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"
+  access_key = ""
+  secret_key = "+"
   }
-#security group
-
-resource "aws_security_group" "Terraform-security" {
-  name = "Terraform-security"
-  description = "Terraform-security"
-
-  ingress {
-    from_port = 8080
-    to_port = 8080
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
 #-----Ec2 Instance------
 
 data "aws_ami" "jenkins" {
@@ -51,7 +25,6 @@ resource "aws_instance" "maven" {
   ami           = data.aws_ami.jenkins.id
   instance_type = "t2.micro"
   key_name      = "jenkins"
-  security_groups = [aws_security_group.Terraform-security.name]
 
   user_data = <<EOF
 #!/bin/bash
@@ -73,7 +46,6 @@ resource "aws_instance" "maven2" {
   ami           = data.aws_ami.jenkins.id
   instance_type = "t2.micro"
   key_name      = "jenkins"
-  security_groups = [aws_security_group.Terraform-security.name]
 
   user_data = <<EOF
 #!/bin/bash
