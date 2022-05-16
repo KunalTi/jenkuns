@@ -39,7 +39,7 @@ sudo systemctl start jenkins
 sudo systemctl enable jenkins
 EOF
   tags = {
-    Name = "jenkins"
+    Name = "maven"
   }
 }
 resource "aws_instance" "maven2" {
@@ -53,4 +53,7 @@ sudo apt update -y
 sudo apt install openjdk-8-jdk -y
 sudo apt install maven git wget unzip -y
 EOF
+ tags = {
+    Name = "maven2"
+  }
 }
