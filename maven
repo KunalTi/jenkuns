@@ -39,7 +39,7 @@ sudo systemctl start jenkins
 sudo systemctl enable jenkins
 EOF
   tags = {
-    Name = "maven"
+    Name = "jenkins"
   }
 }
 resource "aws_instance" "maven2" {
