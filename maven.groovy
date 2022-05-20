@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pipeline {
          agent any 
          stages {
@@ -49,3 +50,6 @@ pipeline {
                  }
          }
 }
+=======
+
+>>>>>>> f6329a5ccb84eb6bab37eb754dd632f6d3e896de
