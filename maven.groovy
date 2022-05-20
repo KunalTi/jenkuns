@@ -25,7 +25,7 @@ pipeline{
                     sh 'sudo ./aws/install --update'
                     sh 'sudo mv /var/lib/jenkins/workspace/tomcat/target/studentapp-2.2-SNAPSHOT.war /home/ubuntu/student-${BUILD_ID}.war'
                     sh 'aws s3 cp /home/ubuntu/student-${BUILD_ID}.war s3://monjeyb'
-                    sh 'sudo cd /usr/share/java/'
+                    sh 'cd /usr/share/java/'
                     sh 'sudo java -jar jenkins.war --httpPort=8081'
                      echo "Start the deploy .."
                 } 
