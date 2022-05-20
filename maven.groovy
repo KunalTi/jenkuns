@@ -6,7 +6,7 @@ pipeline{
                     sh 'sudo apt-get update -y'
                     sh 'sudo apt-get install git -y'
                     echo "Starting to build the App"
-                    git branch: 'master', credentialsId: 'Git.ID', url: 'git@github.com:KunalTi/student-ui.git'
+                    git credentialsId: 'worker', url: 'git@github.com:KunalTi/student-ui.git'
                 }
                 }
             stage('Maven-Build'){
