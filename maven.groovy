@@ -42,7 +42,7 @@ pipeline{
                     sudo ./aws/install --update
                     sudo aws s3 cp s3://monjeyb/studentapp-2.2-SNAPSHOT.war /opt/apacheapache-tomcat-8.5.78/webapps/studentapp.war
                     '''
-                    sh 'sudo /opt/tomcat/bin/catalina.sh start' 
+                    sh 'sudo /opt/apacheapache-tomcat-8.5.78/bin/catalina.sh start' 
                     }                
                 }
             }
