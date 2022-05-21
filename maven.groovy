@@ -40,7 +40,7 @@ pipeline{
                     sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
                     sudo unzip -o awscliv2.zip
                     sudo ./aws/install --update
-                    sudo aws s3 cp s3://monjeyb/studentapp-${BUILD_ID}.war /opt/apache-tomcat-8.5.78/webapps/studentapp.war
+                    sudo aws s3 cp s3://monjeyb/studentapp-2.2-SNAPSHOT.war /opt/apache-tomcat-8.5.78/webapps/studentapp.war
                     '''
                     sh 'sudo /opt/apache-tomcat-8.5.78/bin/catalina.sh start' 
                     }                
