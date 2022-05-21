@@ -21,7 +21,7 @@ pipeline{
                 steps{
                     sh "cd /home/ubuntu/"
                     sh 'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"'
-                    sh 'unzip awscliv2.zip'
+                    sh 'unzip -o awscliv2.zip'
                     sh 'sudo ./aws/install --update'
                     sh 'sudo mv /var/lib/jenkins/workspace/tomcat/target/studentapp-2.2-SNAPSHOT.war /home/ubuntu/student-${BUILD_ID}.war'
                     sh 'aws s3 cp /home/ubuntu/student-${BUILD_ID}.war s3://monjeyb'
