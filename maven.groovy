@@ -21,7 +21,7 @@ pipeline{
                 steps{
                     sh "cd /home/ubuntu/"
                     sh 'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"'
-                    sh 'unzip -o awscliv2.zip'
+                    sh 'unzip awscliv2.zip'
                     sh 'sudo ./aws/install --update'
                     sh 'sudo mv /var/lib/jenkins/workspace/tomcat/target/studentapp-2.2-SNAPSHOT.war /home/ubuntu/student-${BUILD_ID}.war'
                     sh 'aws s3 cp /home/ubuntu/student-${BUILD_ID}.war s3://monjeyb'
@@ -33,7 +33,7 @@ pipeline{
                 steps{
                     echo "App is Prod Ready"
                     withCredentials([sshUserPrivateKey(credentialsId: 'root', keyFileVariable: 'id_rsa')]){
-                    sh 'ssh -i $(jenkins) -o StrictHostKeyChecking=no ubuntu@3.110.119.172<<EOF'
+                    sh 'ssh -i $(id_rsa) -o StrictHostKeyChecking=no ubuntu@3.110.119.172<<EOF'
                     sh '''
                     curl -O https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz
                     sudo tar -xvf apache-tomcat-8.5.78.tar.gz -C /opt/
