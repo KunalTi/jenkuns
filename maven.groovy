@@ -25,7 +25,7 @@ pipeline{
                     sh 'sudo ./aws/install --update'
                     sh 'sudo mv /var/lib/jenkins/workspace/tomcat/target/studentapp-2.2-SNAPSHOT.war /home/ubuntu/student-${BUILD_ID}.war'
                     sh 'aws s3 cp /home/ubuntu/student-${BUILD_ID}.war s3://monjeyb'
-                    sh 'sudo chown -R jenkins:jenkins /usr/share/java/jenkins.war'
+                    sh 'sudo mkdir /var/cache/jenkins ; sudo chown jenkins:jenkins /var/cache/jenkins'
                      echo "Start the deploy .."
                 } 
                 }
