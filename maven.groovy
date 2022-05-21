@@ -33,7 +33,7 @@ pipeline{
                 steps{
                     echo "App is Prod Ready"
                     withCredentials([sshUserPrivateKey(credentialsId: 'root', keyFileVariable: 'id_rsa')]){
-                    sh 'ssh -i -T $id_rsa -o StrictHostKeyChecking=no ubuntu@3.110.119.172'
+                    sh 'ssh -i $id_rsa -o -T StrictHostKeyChecking=no ubuntu@3.110.119.172'
                     sh '''
                     curl -O https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz
                     sudo tar -xvf apache-tomcat-8.5.78.tar.gz -C /opt/
