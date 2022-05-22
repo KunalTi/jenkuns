@@ -16,7 +16,7 @@ pipeline{
                 sudo rm -rf /var/www/html/index.html
                 sudo cp /var/lib/jenkins/workspace/'PHP Pipeline'/test.php /var/www/html/test.php
                 cd /var/www/html/
-                git clone https://github.com/hrishavtandukar/PHPTrialApplication.git
+                sudo git clone https://github.com/hrishavtandukar/PHPTrialApplication.git
                 '''
             }
         }
