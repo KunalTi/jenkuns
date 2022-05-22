@@ -44,7 +44,6 @@ pipeline{
                     '''
                     sh '''
                     sudo /opt/apache-tomcat-8.5.78/bin/catalina.sh start
-                    EOF
                     ''' 
                     }                
                 }
