@@ -5,6 +5,7 @@ pipeline{
         stage('PHP-Install'){
             steps{
                 echo 'Installing...'
+                git branch: 'main', credentialsId: 'kunal', url: 'https://github.com/KunalTi/jenkuns.git'
                 sh'''
                 sudo apt-get update -y
                 sudo apt-get install apache2 -y
