@@ -33,14 +33,14 @@ pipeline{
                 steps{
                     echo "App is Prod Ready"
                     withCredentials([sshUserPrivateKey(credentialsId: 'root', keyFileVariable: 'id_rsa')]){
-                    sh 'ssh -i $id_rsa -o StrictHostKeyChecking=no ubuntu@13.232.58.177<<-EOF'
+                    sh 'ssh -i $id_rsa -o StrictHostKeyChecking=no ubuntu@65.2.71.39<<-EOF'
                     sh '''
                     curl -O https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz
                     sudo tar -xvf apache-tomcat-8.5.78.tar.gz -C /opt/
                     sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
                     sudo unzip -o awscliv2.zip
                     sudo ./aws/install --update
-                    sudo aws s3 cp s3://monjeyb/studentapp-2.2-SNAPSHOT.war /opt/apache-tomcat-8.5.78/webapps/studentapp.war
+                    sudo aws s3 cp s3://monjeyb/student-${BUILD_ID}.war /opt/apache-tomcat-8.5.78/webapps/studentapp.war
                     '''
                     sh 'sudo /opt/apache-tomcat-8.5.78/bin/catalina.sh start' 
                     }                
