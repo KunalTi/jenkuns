@@ -22,7 +22,7 @@ pipeline {
                 cd ~
                 cd /etc/nginx/sites-available/
                 sudo rm -rf default
-                git clone https://github.com/KunalTi/demo.git
+                sudo git clone https://github.com/KunalTi/demo.git
                 cd /var/www/
                 sudo rm -rf html
                 cd ~
