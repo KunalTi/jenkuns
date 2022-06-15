@@ -19,8 +19,18 @@ pipeline {
                 cp .env.example .env
                 php artisan key:generate
                 cd ~
-                cd /etc/nginx
-                
+                cd /etc/nginx/sites-available/
+                rm -rf default
+                git clone https://github.com/KunalTi/demo.git
+                cd /var/www/
+                sudo rm -rf html
+                cd ~
+                mv aws-laravel html
+                sudo mv html /var/www/
+                cd /var/www/html/
+                sudo chmod -R 777 storage
+                sudo systemctl start nginx
+                echo "done"
                 '''
             }
         }
