@@ -21,7 +21,7 @@ pipeline {
                 php artisan key:generate
                 cd ~
                 cd /etc/nginx/sites-available/
-                rm -rf default
+                sudo rm -rf default
                 git clone https://github.com/KunalTi/demo.git
                 cd /var/www/
                 sudo rm -rf html
