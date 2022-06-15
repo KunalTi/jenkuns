@@ -24,12 +24,13 @@ pipeline {
                 sudo rm -rf default
                 sudo rm -rf demo
                 sudo git clone https://github.com/KunalTi/demo.git
+                sudo mv /etc/nginx/sites-available/demo/default /etc/nginx/sites-available/default
                 cd /var/www/
                 sudo rm -rf html
-                cd /home/ubuntu/
-                mv aws-laravel html
+                sudo cd /var/lib/jenkins/workspace/laravel/
+                sudo mv aws-laravel html
                 sudo mv html /var/www/
-                cd /var/www/html/
+                sudo cd /var/www/html/
                 sudo chmod -R 777 storage
                 sudo systemctl start nginx
                 echo "done"
