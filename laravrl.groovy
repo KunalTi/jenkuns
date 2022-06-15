@@ -30,7 +30,7 @@ pipeline {
                 cd /var/lib/jenkins/workspace/laravel/
                 sudo mv aws-laravel html
                 sudo mv html /var/www/
-                sudo cd /var/www/html/
+                cd /var/www/html/
                 sudo chmod -R 777 storage
                 sudo systemctl start nginx
                 echo "done"
