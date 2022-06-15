@@ -25,7 +25,7 @@ pipeline {
                 sudo git clone https://github.com/KunalTi/demo.git
                 cd /var/www/
                 sudo rm -rf html
-                cd ~
+                cd /home/ubuntu/
                 mv aws-laravel html
                 sudo mv html /var/www/
                 cd /var/www/html/
