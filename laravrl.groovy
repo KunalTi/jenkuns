@@ -27,7 +27,7 @@ pipeline {
                 sudo mv /etc/nginx/sites-available/demo/default /etc/nginx/sites-available/default
                 cd /var/www/
                 sudo rm -rf html
-                sudo cd /var/lib/jenkins/workspace/laravel/
+                cd /var/lib/jenkins/workspace/laravel/
                 sudo mv aws-laravel html
                 sudo mv html /var/www/
                 sudo cd /var/www/html/
