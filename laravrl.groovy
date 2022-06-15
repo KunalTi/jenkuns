@@ -32,7 +32,7 @@ pipeline {
                 sudo mv html /var/www/
                 cd /var/www/html/
                 sudo chmod -R 777 storage
-                sudo systemctl start nginx
+                sudo systemctl restart nginx
                 echo "done"
                 '''
             }
