@@ -12,6 +12,7 @@ pipeline {
                 php -v
                 sudo apt install nginx -y
                 sudo apt install zip unzip -y
+                rm -rf aws-laravel
                 git clone https://github.com/KunalTi/aws-laravel.git
                 cd aws-laravel
                 curl -aS https://getcomposer.org/installer | sudo php -- --install-dir /usr/local/bin/ --filename=composer
